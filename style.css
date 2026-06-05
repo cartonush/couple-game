@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(255, 120, 160, 0.22), transparent 35%),
+    linear-gradient(180deg, #321326, #22061c, #170012);
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 18px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1150px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-size: clamp(30px, 6vw, 52px);
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: #ffd6df;
+  font-size: clamp(15px, 3vw, 19px);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.card {
+  border: none;
+  border-radius: 26px;
+  min-height: 125px;
+  padding: 14px;
+  cursor: pointer;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.28);
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card:active {
+  transform: scale(0.97);
+}
+
+.icon {
+  font-size: clamp(34px, 8vw, 56px);
+}
+
+.title {
+  font-size: clamp(20px, 4.5vw, 28px);
+  font-weight: bold;
+}
+
+.dice {
+  background: linear-gradient(135deg, #ff7b63, #ff6a6a);
+}
+
+.special-card {
+  background: linear-gradient(135deg, #facc15, #f97316);
+}
+
+.task {
+  background: linear-gradient(135deg, #8c5eff, #b07cff);
+}
+
+.question {
+  background: linear-gradient(135deg, #ff4d8d, #ff3d7a);
+}
+
+.couple-task {
+  background: linear-gradient(135deg, #db2777, #9333ea);
+}
+
+.couple-question {
+  background: linear-gradient(135deg, #f43f5e, #a855f7);
+}
+
+.result-box {
+  margin-top: 14px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 28px;
+  min-height: 190px;
+  padding: 22px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.result-type {
+  color: #ffd6df;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.result-text {
+  width: 100%;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.main-result {
+  font-size: clamp(27px, 6vw, 44px);
+  font-weight: bold;
+  line-height: 1.35;
+  margin-bottom: 22px;
+}
+
+.small-note {
+  font-size: 17px;
+  color: #ffd6df;
+  margin-bottom: 8px;
+}
+
+.punishment-result {
+  font-size: clamp(22px, 5vw, 32px);
+  font-weight: bold;
+  color: #ffb6c7;
+  line-height: 1.35;
+}
+
+.dice-number {
+  font-size: clamp(80px, 18vw, 130px);
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.open-animation {
+  animation: openCard 0.45s ease;
+}
+
+@keyframes openCard {
+  0% {
+    opacity: 0;
+    transform: rotateY(90deg) scale(0.92);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateY(0) scale(1);
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    align-items: center;
+  }
+
+  .buttons {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+  }
+
+  .card {
+    min-height: 170px;
+    border-radius: 28px;
+  }
+
+  .couple-task {
+    order: 1;
+  }
+
+  .task {
+    order: 2;
+  }
+
+  .dice {
+    order: 3;
+  }
+
+  .special-card {
+    order: 4;
+  }
+
+  .question {
+    order: 5;
+  }
+
+  .couple-question {
+    order: 6;
+  }
+
+  .result-box {
+    margin-top: 18px;
+    min-height: 230px;
+  }
+}
+
+@media (max-width: 420px) {
+  body {
+    padding: 14px;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+
+  .card {
+    min-height: 118px;
+    border-radius: 23px;
+  }
+
+  .result-box {
+    margin-top: 10px;
+    min-height: 180px;
+  }
+}
