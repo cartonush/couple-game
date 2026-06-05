@@ -266,6 +266,7 @@ const cqp = [
   "הטילו קוביה, התוצאה = צעדים אחורה"
 ]
 const special = [
+  "need to add"
 ];
 const diceTexts = {
   1: "לאט ובטוח זה המפתח אני אומר לך",
